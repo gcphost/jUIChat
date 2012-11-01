@@ -5,3 +5,12 @@
 * Designed to be like: <a href="http://anantgarg.com/2009/05/13/gmail-facebook-style-jquery-chat/">Gmail/Facebook Style jQuery Chat</a> (but 100% free!)
 * <a href="http://os.alfajango.com/css-emoticons/">jQuery CSS3 Emoticons</a>
 * Licensed under LGPL
+
+
+==Options:==
+* recheckdelay: delay in time to check for new chats/viewers
+* idletime: delay in time before a user is idle (yellow)
+* getViewers: show the viewers
+* viewerwrapper: the class name or div for viewer list
+* emoticons: enable emoticons
+* page: the php page
