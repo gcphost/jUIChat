@@ -1,0 +1,7 @@
+== jQuery UI Live Chat (juichat) ==
+
+* Using jQuery and jQuery UI for themeing
+* Written in PHP using MySQL
+* Designed to be like: <a href="http://anantgarg.com/2009/05/13/gmail-facebook-style-jquery-chat/">Gmail/Facebook Style jQuery Chat</a> (but 100% free!)
+* <a href="http://os.alfajango.com/css-emoticons/">jQuery CSS3 Emoticons</a>
+* Licensed under LGPL

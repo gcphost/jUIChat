@@ -1,0 +1,69 @@
+<html>
+<head><title>Live Chat</title>
+<script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+<script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
+<script src="js/juichat.js"></script>
+<script src="js/jquery.cssemoticons.min.js"></script>
+<link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
+<link rel="stylesheet" type="text/css" href="css/juichat.css" />
+<link rel="stylesheet" type="text/css" href="css/jquery.cssemoticons.css" />
+<style type="text/css">
+	body{ font-family: arial, helvetica; font-size: 10pt}
+</style>
+
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+<meta http-equiv="pragma" content="no-cache" />
+
+</head>
+<body>
+
+
+	<div id="site">
+		<h1>jQuery UI Live Chat (juichat)</h1>
+		<ul>
+			<li>Using jQuery and jQuery UI for themeing</li>
+			<li>Written in PHP using MySQL</li>
+			<li>Designed to be like: <a href="http://anantgarg.com/2009/05/13/gmail-facebook-style-jquery-chat/">Gmail/Facebook Style jQuery Chat</a> (but 100% free!)</li>
+			<li><a href="http://os.alfajango.com/css-emoticons/">jQuery CSS3 Emoticons</a></li>
+			<li>Licensed under LGPL (thinking MIT)</li>
+		</ul>
+		<h3>To-do:</h3>
+		<ul>	
+			<li>video chat?!?!?! http://myprojectguide.org/p/flash-videoio/9.html</li>
+			<li>clean up settings dialog</li>
+			<li>fix close chat + reload + open chat = no chat content</li>
+			<li>user may have hard time finding how to change their name</li>
+		</ul>
+
+
+
+		<h3>Example Usage:</h3>
+		<pre>
+&lt;script type=<span style=' color: Maroon;'>"text/javascript"</span>&gt; 
+	$().livechat({'getViewers': <span style=' color: Maroon;'>true</span>}); 
+&lt;/script&gt; 
+		</pre>
+
+		<h3>Options:</h3>
+		<ul>
+			<li>recheckdelay: delay in time to check for new chats/viewers</li>
+			<li>idletime: delay in time before a user is idle (yellow)</li>
+			<li>getViewers: show the viewers</li>
+			<li>viewerwrapper: the class name or div for viewer list</li>
+			<li>emoticons: enable emoticons</li>
+			<li>page: the php page</li>
+		</ul>
+
+
+	</div>
+
+	<div class="ui-lc-viewers"></div>
+
+	<script type="text/javascript">
+		$().livechat({'getViewers': true});
+	</script>
+</body>
+</html>
