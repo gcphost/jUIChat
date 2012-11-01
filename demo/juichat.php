@@ -43,9 +43,9 @@ if(isset($_REQUEST['mode'])){
 }
 
 class LiveChat{
-	var $sql_host='192.168.1.3';
+	var $sql_host='localhost';
 	var $sql_user='root';
-	var $sql_pass='tical';
+	var $sql_pass='';
 	var $sql_db='livechat';
 
 	var $idleLimit='300';
