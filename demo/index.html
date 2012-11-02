@@ -2,7 +2,7 @@
 <head><title>Live Chat</title>
 <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
 <script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
-<script src="js/juichat.js"></script>
+<script src="js/jquery.juichat.js"></script>
 <script src="js/jquery.cssemoticons.min.js"></script>
 <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
 <link rel="stylesheet" type="text/css" href="css/juichat.css" />
@@ -43,27 +43,26 @@
 		<h3>Example Usage:</h3>
 		<pre>
 &lt;script type=<span style=' color: Maroon;'>"text/javascript"</span>&gt; 
-	$().livechat({'getViewers': <span style=' color: Maroon;'>true</span>}); 
+	$().juichat({'display_viewers': <span style=' color: Maroon;'>true</span>}); 
 &lt;/script&gt; 
 		</pre>
 
 		<h3>Options:</h3>
 		<ul>
-			<li>recheckdelay: delay in time to check for new chats/viewers</li>
-			<li>idletime: delay in time before a user is idle (yellow)</li>
-			<li>getViewers: show the viewers</li>
-			<li>viewerwrapper: the class name or div for viewer list</li>
+			<li>heartbeat: delay in time to check for new chats/viewers</li>
+			<li>idle_user: delay in time before a user is idle (yellow)</li>
+			<li>display_viewers: show the viewers</li>
+			<li>viewer_wrapper: the class name or div for viewer list</li>
 			<li>emoticons: enable emoticons</li>
 			<li>page: the php page</li>
 		</ul>
-
 
 	</div>
 
 	<div class="ui-lc-viewers"></div>
 
 	<script type="text/javascript">
-		$().livechat({'getViewers': true});
+		$().juichat({'display_viewers': true});
 	</script>
 </body>
 </html>

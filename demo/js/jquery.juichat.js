@@ -1,13 +1,15 @@
-var _mydata;
-$.fn.livechat = function(options) {
+(function( $ ){
+  	var _mydata;
+
+  $.fn.juichat = function( options ) {  
 
 	var settings = $.extend({
-		recheckdelay: 6000,
-		idletime: 180,
-		getViewers: false,
+		heartbeat: 6000,
+		idle_user: 180,
 		emoticons: true,
-		page: 'juichat.php',
-		viewerwrapper: '.ui-lc-viewers'
+		display_viewers: false,
+		viewer_wrapper: '.ui-lc-viewers',
+		page: 'juichat.php'
 	}, options);
 
 
@@ -27,14 +29,14 @@ $.fn.livechat = function(options) {
 				_mydata=data;
 				_forceautoscroll=true;
 				fnParseChats(data.chat)
-				if(settings.getViewers) fnParseViewers(data.viewers);
+				if(settings.display_viewers) fnParseViewers(data.viewers);
 
 				setInterval(function() {
 					var _heartbeat=true;
 					_flashstatus=true;
 					_forceautoscroll=false;
 					fnChatHeartBeat();
-				}, settings.recheckdelay);
+				}, settings.heartbeat);
 			}
 		);
 	}
@@ -71,11 +73,11 @@ $.fn.livechat = function(options) {
 
 	function fnParseViewers(data){
 		$('.ui-lc-viewer-container, .ui-lc-viewer-containerheader').remove();
-		$('<div/>').addClass('ui-widget-header ui-lc-viewer-containerheader').appendTo(settings.viewerwrapper);
+		$('<div/>').addClass('ui-widget-header ui-lc-viewer-containerheader').appendTo(settings.viewer_wrapper);
 		$('<div/>').addClass('ui-lc-viewer-containerheader-txt').html(fnRenderGravitar(_mydata.gravitar) + ' ' +_mydata.user).appendTo('.ui-lc-viewer-containerheader');
 		$('<span/>').addClass('ui-icon ui-icon-gear ui-pointer').click(function(){fnSetName()}).appendTo('.ui-lc-viewer-containerheader');
 
-		$('<ul/>').addClass('ui-lc-viewer-container ui-widget').appendTo(settings.viewerwrapper);
+		$('<ul/>').addClass('ui-lc-viewer-container ui-widget').appendTo(settings.viewer_wrapper);
 
 		$.each(data, function(i, item){
 			var _row=$('<li/>', {title: 'Browser: '+ item.browser +'\nIP:'+item.ip}).html(fnRenderGravitar(item.gravitar));
@@ -117,7 +119,7 @@ $.fn.livechat = function(options) {
 		$.getJSON(settings.page, { mode: 'GetChats' },
 			function(data){
 				fnParseChats(data.chats);
-				if(settings.getViewers) fnParseViewers(data.viewers);
+				if(settings.display_viewers) fnParseViewers(data.viewers);
 			}
 		);
 	}
@@ -185,7 +187,7 @@ $.fn.livechat = function(options) {
 			$('#'+hash).find('.ui-lc-statusnotify').css({'background':'red'});
 		} else {
 			$('#'+hash).find('.ui-lc-userstatus').html('').hide();
-			if(lastmsg > settings.idletime){
+			if(lastmsg > settings.idle_user){
 				$('#'+hash).find('.ui-lc-statusnotify').css({'background':'#EEEE00'});
 			} else $('#'+hash).find('.ui-lc-statusnotify').css({'background':'green'});
 		}
@@ -332,4 +334,6 @@ $.fn.livechat = function(options) {
 		}
 	}
 
-};
+	return true;
+  };
+})( jQuery );

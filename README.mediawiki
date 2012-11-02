@@ -8,9 +8,9 @@
 
 
 ==Options:==
-* recheckdelay: delay in time to check for new chats/viewers
-* idletime: delay in time before a user is idle (yellow)
-* getViewers: show the viewers
-* viewerwrapper: the class name or div for viewer list
+* heartbeat: delay in time to check for new chats/viewers
+* idle_user: delay in time before a user is idle (yellow)
+* display_viewers: show the viewers
+* viewer_wrapper: the class name or div for viewer list
 * emoticons: enable emoticons
 * page: the php page
