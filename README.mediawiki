@@ -6,6 +6,8 @@
 * <a href="http://os.alfajango.com/css-emoticons/">jQuery CSS3 Emoticons</a>
 * Licensed under LGPL
 
+== Demo ==
+* http://juichat.com/
 
 ==Options:==
 * heartbeat: delay in time to check for new chats/viewers
